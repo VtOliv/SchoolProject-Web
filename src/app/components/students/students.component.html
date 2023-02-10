@@ -1,0 +1,71 @@
+<div class="container">
+
+    <mat-accordion>
+        <mat-expansion-panel hideToggle class="search">
+
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Clique aqui para filtrar os alunos
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-radio-group aria-label="Select an option" class="searchType" [(ngModel)]="field">
+                <mat-radio-button value="classId">Turma</mat-radio-button>
+                <mat-radio-button value="studentId">Matricula</mat-radio-button>
+                <mat-radio-button value="studentName">Nome</mat-radio-button>
+              </mat-radio-group>
+
+            <mat-form-field class="searchInput" appearance="fill">
+                <mat-label>Pesquisar</mat-label>
+                <input matInput placeholder="Digite o que deseja pesquisar" [(ngModel)]="filter" name="filter">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" class="searchBtn" (click)="buscar()">Buscar Alunos</button>
+            <button mat-raised-button color="primary" class="searchBtn" routerLink="/students/new">Cadastrar Aluno</button>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <div class="teste">
+
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="studentId">
+                <mat-header-cell *matHeaderCellDef> Matrícula </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.studentId}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="studentName">
+                <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.studentName}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="classId">
+                <mat-header-cell *matHeaderCellDef> Turma </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.classId}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="birthday">
+                <mat-header-cell *matHeaderCellDef> Data de Nascimento </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.birthday}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="delete">
+                <mat-header-cell *matHeaderCellDef> Opções </mat-header-cell>
+                <mat-cell *matCellDef="let element"> 
+                    <button mat-mini-fab color="primary"><span class="material-icons-outlined">edit_outlined</span></button>
+                    <button mat-mini-fab color="warn"><span class="material-icons-outlined">delete_outlined</span></button>     
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+
+    <div class="paginator">
+        <mat-paginator (page)="handlePageEvent($event)" [length]="length" [pageIndex]="pageIndex" [pageSize]="pageSize"
+            [hidePageSize]="true" showFirstLastButtons>
+        </mat-paginator>
+    </div>
+</div>

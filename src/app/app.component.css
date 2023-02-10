@@ -1,0 +1,29 @@
+.navbar {
+    background: linear-gradient(blue,lightgrey);
+    display: flex;
+    height: 10%;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.navbar button {
+    width: 25%;
+    height: 20%;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.navbar button:hover {
+    opacity: 0.8;
+    background: linear-gradient(blue,lightgrey);
+}
+
+.logo{
+    width: 10%;
+    align-self: center;
+}
+

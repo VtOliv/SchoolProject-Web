@@ -1,0 +1,43 @@
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: white; */
+    margin-top: 2%;
+    font-family: monospace;
+}
+
+.formHolder {
+    width: 90%;
+    height: 50%;
+    box-shadow: 1px 1px 10px 5px gray;
+    border-radius: 10px;
+    text-align: center;
+    background-color: lightblue;
+    padding: 3px;
+}
+
+mat-form-field {
+    width: 40%;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: black;
+}
+
+mat-label {
+    color: rgb(59, 58, 58);
+}
+
+.url {
+    width: 25.7%;
+}
+
+button {
+    width: 40%;
+    margin: 10px;
+}

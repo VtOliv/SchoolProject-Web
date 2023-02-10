@@ -1,0 +1,62 @@
+<section class="content">
+
+    <div class="formHolder">
+        <h1>Novo Aluno</h1>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nome do Aluno</mat-label>
+            <input matInput type="text" [(ngModel)]="student.studentName" name="filtro">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Turma</mat-label>
+            <input matInput type="number" min="0" [(ngModel)]="student.classId" name="filtro">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput type="date" [(ngModel)]="student.birthday" name="filtro">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Endereço do Aluno</mat-label>
+            <input matInput type="text" min="0" [(ngModel)]="student.address" name="filtro">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Telefone do Aluno</mat-label>
+            <input matInput type="text" [(ngModel)]="student.studentTelephone" name="filtro">
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Email do Aluno</mat-label>
+            <input matInput type="text" [(ngModel)]="student.studentEmail" name="filtro">
+        </mat-form-field>
+        
+        <mat-form-field class="url" appearance="outline">
+            <mat-label>Bairro</mat-label>
+            <input matInput type="text" min="0" [(ngModel)]="student.neighborhood" name="filtro">
+        </mat-form-field>
+
+        <mat-form-field class="url" appearance="outline">
+            <mat-label>Cep</mat-label>
+            <input matInput type="number" min="0" [(ngModel)]="student.cep" name="filtro">
+        </mat-form-field>
+
+        <mat-form-field class="url" appearance="outline">
+            <mat-label>Cidade</mat-label>
+            <input matInput type="text" [(ngModel)]="student.city" name="filtro">
+        </mat-form-field>
+
+
+        <div>
+            <button class="search" mat-raised-button color="primary" (click)="teste()">
+                Cadastrar Aluno
+            </button>
+
+            <button routerLink="/students" class="search" mat-raised-button color="primary">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</section>
